@@ -24,13 +24,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get a free, no-obligation cleaning quote in Cardiff. Message Dan on WhatsApp, Instagram or Facebook, call, email, or send the quote form.",
+          "Get a free, no-obligation cleaning quote in Cardiff. Message us on WhatsApp, Instagram or Facebook, call, email, or send the quote form.",
       },
       { property: "og:title", content: "Contact & Get a Quote — Spotlessly Clean" },
       {
         property: "og:description",
         content:
-          "Free, no-obligation cleaning quotes across Cardiff. Get in touch with Dan today.",
+          "Free, no-obligation cleaning quotes across Cardiff. Get in touch today.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
@@ -96,8 +96,8 @@ function ContactPage() {
           <span className="text-muted-foreground">free, no-obligation quote.</span>
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          The quickest way to reach Dan is a message on WhatsApp, Instagram or Facebook —
-          or fill in the form below and it'll land straight in his inbox. Same-day replies
+          The quickest way to reach us is a message on WhatsApp, Instagram or Facebook —
+          or fill in the form below and it'll land straight in our inbox. Same-day replies
           wherever possible.
         </p>
       </section>
@@ -123,7 +123,7 @@ function ContactPage() {
           >
             <Phone className="size-6" style={{ color: "var(--accent)" }} />
             <div>
-              <p className="text-sm font-medium">Call Dan</p>
+              <p className="text-sm font-medium">Call us</p>
               <p className="text-sm text-muted-foreground">{PHONE}</p>
             </div>
           </a>
@@ -165,7 +165,7 @@ function ContactPage() {
                 <p className="text-lg">Thanks — your email is ready to send.</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Your email app should have opened with the details filled in. If it didn't,
-                  message Dan on{" "}
+                  message us on{" "}
                   <a
                     href={WHATSAPP}
                     target="_blank"
@@ -326,7 +326,7 @@ function ContactPage() {
                   rel="noreferrer"
                   className="flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
                 >
-                  <MessageCircle className="size-4" /> WhatsApp Dan
+                  <MessageCircle className="size-4" /> WhatsApp us
                 </a>
                 <a
                   href={IG}

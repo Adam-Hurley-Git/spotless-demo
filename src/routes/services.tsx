@@ -41,7 +41,7 @@ function ServicesPage() {
         <div className="mt-8 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             From a regular weekly slot to a full end of tenancy clean, every job is carried
-            out by Dan to the same careful standard. No fixed packages and no upselling —
+            out to the same careful standard. No fixed packages and no upselling —
             just the clean your space actually needs.
           </p>
           <div className="flex flex-wrap gap-3 md:justify-end">
@@ -168,9 +168,9 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Dan */}
+      {/* Why book us */}
       <section className="mx-auto max-w-[1240px] px-6 py-20 md:py-24">
-        <p className="eyebrow">Why book Dan</p>
+        <p className="eyebrow">Why book us</p>
         <div className="mt-8 grid gap-4 md:grid-cols-4">
           {TRUST.map(([t, b]) => (
             <div key={t} className="rounded-2xl border border-border bg-card p-7">
@@ -188,7 +188,7 @@ function ServicesPage() {
             Not sure which clean you need?
           </h2>
           <p className="mt-4 max-w-md leading-relaxed text-paper/60">
-            Tell Dan a little about your space and he'll recommend the right option and send
+            Tell us a little about your space and we'll recommend the right option and send
             a free, no-obligation price.
           </p>
           <Link

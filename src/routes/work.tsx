@@ -11,7 +11,7 @@ export const Route = createFileRoute("/work")({
       {
         name: "description",
         content:
-          "See real homes across Cardiff cleaned by Dan — kitchens, bathrooms, deep cleans and end of tenancy finishes. Browse the gallery and follow along on Instagram.",
+          "See real homes across Cardiff cleaned by Spotlessly Clean — kitchens, bathrooms, deep cleans and end of tenancy finishes. Browse the gallery and follow along on Instagram.",
       },
       { property: "og:title", content: "Our Work — Spotlessly Clean" },
       {
@@ -35,11 +35,11 @@ function WorkPage() {
         <h1 className="mt-6 max-w-4xl text-[clamp(2.4rem,6vw,4.8rem)] leading-[0.97]">
           Real homes,
           <br />
-          <span className="text-muted-foreground">cleaned by Dan.</span>
+          <span className="text-muted-foreground">cleaned to a shine.</span>
         </h1>
         <div className="mt-8 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Every photo here is a real Cardiff home or space cleaned by Dan — no stock
+            Every photo here is a real Cardiff home or space cleaned by our team — no stock
             images. From weekly cleans that keep on top of a busy household to deep cleans
             and end of tenancy resets, this is the standard you can expect every visit.
           </p>
@@ -101,7 +101,7 @@ function WorkPage() {
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A snapshot of what Dan is booked for most — each one quoted on what the
+              A snapshot of what we're booked for most — each one quoted on what the
               space actually needs.
             </p>
           </div>
@@ -128,7 +128,7 @@ function WorkPage() {
             Want your place looking like this?
           </h2>
           <p className="mt-4 max-w-md leading-relaxed text-paper/60">
-            Send Dan a message with your postcode and what you need, and he'll come back
+            Send us a message with your postcode and what you need, and we'll come back
             with a free, no-obligation price — usually the same day.
           </p>
           <Link

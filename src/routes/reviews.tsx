@@ -121,7 +121,7 @@ function ReviewsPage() {
             Join the list of happy Cardiff homes.
           </h2>
           <p className="mt-4 max-w-md leading-relaxed text-paper/60">
-            See what all the five stars are about. Send Dan a message for a free,
+            See what all the five stars are about. Send us a message for a free,
             no-obligation quote and find out for yourself.
           </p>
           <Link

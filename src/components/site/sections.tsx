@@ -9,7 +9,7 @@ import {
   EMAIL_HREF,
   EXTRAS,
   FB,
-  GALLERY,
+  HOME_GALLERY,
   HERO_IMG,
   HOME_SERVICES,
   IG,
@@ -140,7 +140,7 @@ export function Hero() {
 
       <div className="mt-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-end">
         <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
-          Spotlessly Clean Ltd is a trusted Cardiff cleaning service run by Dan. Weekly,
+          Spotlessly Clean Ltd is a trusted Cardiff cleaning service founded by Dan. Weekly,
           fortnightly and monthly cleans, deep cleans, end of tenancy, Airbnb, ovens,
           upholstery and office work — friendly, professional and fully insured.
         </p>
@@ -266,7 +266,7 @@ export function Work() {
           <div>
             <p className="eyebrow">Our work</p>
             <h2 className="mt-4 max-w-xl text-[clamp(2rem,4vw,3.25rem)] leading-[1.02]">
-              Real homes, cleaned by Dan.
+              Real homes, cleaned to a shine.
             </h2>
           </div>
           <a
@@ -280,7 +280,7 @@ export function Work() {
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-          {GALLERY.map((g) => (
+          {HOME_GALLERY.map((g) => (
             <figure key={g.src} className="overflow-hidden rounded-[1.5rem]">
               <img
                 src={g.src}
@@ -446,13 +446,13 @@ export function Quote() {
             rel="noreferrer"
             className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
           >
-            WhatsApp Dan
+            WhatsApp us
           </a>
           <a
             href={PHONE_HREF}
             className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
           >
-            Call Dan
+            Call us
           </a>
         </div>
         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-paper/60">

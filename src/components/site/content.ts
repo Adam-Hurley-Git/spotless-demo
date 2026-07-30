@@ -34,6 +34,20 @@ const diningImg = `${IMG}/sc-dining.jpg`;
 const bath2Img = `${IMG}/sc-bath2.jpg`;
 const upholsteryImg = `${IMG}/sc-upholstery.jpg`; // real photo of Dan vacuuming a sofa
 
+// Additional real gallery photos pulled from the Instagram feed.
+const livingBlueImg = `${IMG}/sc-living-blue.jpg`;
+const nookImg = `${IMG}/sc-nook.jpg`;
+const kitchenGreyImg = `${IMG}/sc-kitchen-grey.jpg`;
+const bathroomGreyImg = `${IMG}/sc-bathroom-grey.jpg`;
+const kitchenRangeImg = `${IMG}/sc-kitchen-range.jpg`;
+const kitchenIslandImg = `${IMG}/sc-kitchen-island.jpg`;
+const bathFreestandingImg = `${IMG}/sc-bath-freestanding.jpg`;
+const wetroomImg = `${IMG}/sc-wetroom.jpg`;
+const kitchenLiliesImg = `${IMG}/sc-kitchen-lilies.jpg`;
+const livingOpenImg = `${IMG}/sc-living-open.jpg`;
+const gamesRoomImg = `${IMG}/sc-games-room.jpg`;
+const diningWhiteImg = `${IMG}/sc-dining-white.jpg`;
+
 /* ------------------------------------------------------------------ */
 /* Contact                                                             */
 /* ------------------------------------------------------------------ */
@@ -94,7 +108,7 @@ export const SERVICES: Service[] = [
     body: "A regular slot that keeps on top of the whole house — kitchens, bathrooms, floors, dusting and surfaces.",
     img: kitchenImg,
     detail:
-      "The same trusted clean on a schedule that suits you. Dan keeps on top of the whole home so it never gets away from you — ideal for busy households, families and anyone who would simply rather spend their weekend on something else.",
+      "The same trusted clean on a schedule that suits you. We keep on top of the whole home so it never gets away from you — ideal for busy households, families and anyone who would simply rather spend their weekend on something else.",
     includes: [
       "Kitchen surfaces, hob and outside of appliances",
       "Bathrooms, sinks, toilets and showers sanitised",
@@ -126,7 +140,7 @@ export const SERVICES: Service[] = [
     body: "Landlord-ready cleans for moving in or out, carried out to the standard inventory checks expect.",
     img: tenancyImg,
     detail:
-      "Moving is stressful enough. Whether you're handing keys back and want your deposit protected, or moving into a place you'd like properly freshened first, Dan cleans to the standard letting agents and inventory clerks look for.",
+      "Moving is stressful enough. Whether you're handing keys back and want your deposit protected, or moving into a place you'd like properly freshened first, we clean to the standard letting agents and inventory clerks look for.",
     includes: [
       "Whole property cleaned top to bottom",
       "Inside the oven and all kitchen appliances",
@@ -173,7 +187,7 @@ export const SERVICES: Service[] = [
     body: "Quick, reliable changeovers between guests, finished to a five-star standard.",
     img: loungeImg,
     detail:
-      "Dependable changeovers for short-let hosts. Dan turns the property around between guests to a consistent, photo-ready standard, so every arrival meets the reviews you're working hard to earn.",
+      "Dependable changeovers for short-let hosts. We turn the property around between guests to a consistent, photo-ready standard, so every arrival meets the reviews you're working hard to earn.",
     includes: [
       "Full clean between guest stays",
       "Beds stripped and freshly made",
@@ -189,7 +203,7 @@ export const SERVICES: Service[] = [
     body: "Dust, debris and residue cleared after works so you can enjoy the new space.",
     img: buildersImg,
     detail:
-      "Building and renovation work leaves fine dust everywhere. Dan clears the debris and the residue left behind so you can move straight into enjoying the finished result rather than cleaning up after it.",
+      "Building and renovation work leaves fine dust everywhere. We clear the debris and the residue left behind so you can move straight into enjoying the finished result rather than cleaning up after it.",
     includes: [
       "Fine construction dust removed throughout",
       "Paint splashes and residue cleared",
@@ -276,12 +290,27 @@ export const TRUST = [
 
 export const GALLERY = [
   { src: hallImg, alt: "Cleaned hallway and staircase" },
-  { src: bedroomImg, alt: "Freshly cleaned bedroom" },
+  { src: kitchenGreyImg, alt: "Modern grey kitchen cleaned and gleaming" },
+  { src: bathFreestandingImg, alt: "Bathroom with freestanding bath cleaned" },
+  { src: livingBlueImg, alt: "Living room with feature wall after a clean" },
+  { src: kitchenIslandImg, alt: "Open plan kitchen with island cleaned" },
   { src: showerImg, alt: "Sparkling glass shower and vanity" },
+  { src: bedroomImg, alt: "Freshly cleaned bedroom" },
+  { src: kitchenRangeImg, alt: "Kitchen with range cooker cleaned" },
+  { src: wetroomImg, alt: "Walk-in wet room cleaned to a shine" },
   { src: loungeImg, alt: "Open plan lounge after a deep clean" },
-  { src: diningImg, alt: "Dining room cleaned and tidied" },
+  { src: kitchenLiliesImg, alt: "Kitchen surfaces cleaned and dressed with fresh flowers" },
+  { src: livingOpenImg, alt: "Open plan living space with herringbone floor cleaned" },
+  { src: bathroomGreyImg, alt: "Family bathroom sanitised top to bottom" },
+  { src: diningWhiteImg, alt: "Dining room cleaned and tidied" },
+  { src: nookImg, alt: "Styled reading corner cleaned and dusted" },
+  { src: gamesRoomImg, alt: "Games room cleaned and tidied" },
+  { src: diningImg, alt: "Dining area cleaned and tidied" },
   { src: bath2Img, alt: "Bathroom cleaned to a spotless finish" },
 ];
+
+/** Shorter teaser strip shown on the home page (full set lives on /work). */
+export const HOME_GALLERY = GALLERY.slice(0, 6);
 
 /* ------------------------------------------------------------------ */
 /* Reviews                                                             */
@@ -327,7 +356,7 @@ export const STEPS: Step[] = [
     title: "Message us",
     body: "Send a DM on Instagram or Facebook with your postcode and what you need.",
     detail:
-      "Send Dan a message on WhatsApp, Instagram or Facebook, or use the quote form. Tell him your postcode, roughly how big the space is and what you're after — a regular slot, a one-off deep clean, an end of tenancy, and so on. The more detail you give, the more accurate your quote.",
+      "Send us a message on WhatsApp, Instagram or Facebook, or use the quote form. Tell us your postcode, roughly how big the space is and what you're after — a regular slot, a one-off deep clean, an end of tenancy, and so on. The more detail you give, the more accurate your quote.",
   },
   {
     title: "Get a quote",
@@ -337,15 +366,15 @@ export const STEPS: Step[] = [
   },
   {
     title: "We clean",
-    body: "Dan turns up on time with everything needed and works through the checklist.",
+    body: "We turn up on time with everything needed and work through the checklist.",
     detail:
-      "Dan arrives on time with all the products and equipment needed and works through the checklist for your type of clean. He's fully insured, careful in your home and happy to focus on anything specific you've flagged. Same trusted cleaner every visit — never a rotating team of strangers.",
+      "We arrive on time with all the products and equipment needed and work through the checklist for your type of clean. Fully insured, careful in your home and happy to focus on anything specific you've flagged — a consistent, reliable service every visit, never a rotating cast of strangers.",
   },
   {
     title: "Enjoy it",
     body: "Come back to a spotless space. Book it again whenever you like.",
     detail:
-      "Come back to a spotless space. If you'd like a regular slot, Dan will hold the same day and time for you each week, fortnight or month. Happy to adjust the checklist any time, and easy to reach if you ever need to move a booking.",
+      "Come back to a spotless space. If you'd like a regular slot, we'll hold the same day and time for you each week, fortnight or month. Happy to adjust the checklist any time, and easy to reach if you ever need to move a booking.",
   },
 ];
 
@@ -358,23 +387,23 @@ export type Faq = { q: string; a: string };
 export const FAQS: Faq[] = [
   {
     q: "How do I book a clean?",
-    a: "Message Dan on WhatsApp, Instagram or Facebook, or send the quote form. He'll confirm a price and a time that suits you — most enquiries get a same-day reply.",
+    a: "Message us on WhatsApp, Instagram or Facebook, or send the quote form. We'll confirm a price and a time that suits you — most enquiries get a same-day reply.",
   },
   {
     q: "Are you insured?",
-    a: "Yes. Spotlessly Clean is fully insured and Dan is carefully vetted and experienced, so you can have complete peace of mind having him in your home or business.",
+    a: "Yes. Spotlessly Clean is fully insured and our cleaners are carefully vetted and experienced, so you can have complete peace of mind having us in your home or business.",
   },
   {
     q: "Do I need to provide cleaning products or equipment?",
-    a: "No — Dan brings everything needed as standard. If you'd prefer he uses specific products of your own, for example for allergies or particular surfaces, just let him know and he's happy to.",
+    a: "No — we bring everything needed as standard. If you'd prefer we use specific products of your own, for example for allergies or particular surfaces, just let us know and we're happy to.",
   },
   {
     q: "Are you happy to clean around pets?",
-    a: "Absolutely. Dan is comfortable working in homes with pets. Just mention them when you book so he knows what to expect on the day.",
+    a: "Absolutely. We're comfortable working in homes with pets. Just mention them when you book so we know what to expect on the day.",
   },
   {
     q: "What if I need to cancel or reschedule?",
-    a: "Life happens — just give Dan as much notice as you can and he'll move your booking to another time. There's no tie-in and no pressure with regular slots.",
+    a: "Life happens — just give us as much notice as you can and we'll move your booking to another time. There's no tie-in and no pressure with regular slots.",
   },
   {
     q: "Which areas do you cover?",

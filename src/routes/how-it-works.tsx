@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteLayout } from "@/components/site/sections";
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/how-it-works")({
 });
 
 function HowItWorksPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
     <SiteLayout>
       {/* Intro */}
@@ -39,8 +42,8 @@ function HowItWorksPage() {
         </h1>
         <div className="mt-8 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Booking Dan is refreshingly simple. No call centres, no lengthy contracts and
-            no rotating team of strangers — just one trusted cleaner, a clear price and a
+            Booking a clean is refreshingly simple. No call centres, no lengthy contracts
+            and no rotating cast of strangers — just a trusted team, a clear price and a
             time that suits you.
           </p>
           <div className="flex flex-wrap gap-3 md:justify-end">
@@ -56,7 +59,7 @@ function HowItWorksPage() {
               rel="noreferrer"
               className="rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
             >
-              WhatsApp Dan
+              WhatsApp us
             </a>
           </div>
         </div>
@@ -86,10 +89,10 @@ function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Why book Dan */}
+      {/* Why book us */}
       <section className="border-y border-border bg-secondary/50 py-20 md:py-28">
         <div className="mx-auto max-w-[1240px] px-6">
-          <p className="eyebrow">Why book Dan</p>
+          <p className="eyebrow">Why book us</p>
           <h2 className="mt-4 max-w-xl text-[clamp(2rem,4vw,3.25rem)] leading-[1.02]">
             The same careful standard, every time.
           </h2>
@@ -113,27 +116,41 @@ function HowItWorksPage() {
               Frequently asked questions.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Anything not covered here? Just ask Dan when you get in touch — he's happy
+              Anything not covered here? Just ask when you get in touch — we're happy
               to talk it through.
             </p>
           </div>
           <div className="grid gap-4">
-            {FAQS.map((f) => (
-              <details
-                key={f.q}
-                className="group rounded-2xl border border-border bg-card p-6 md:p-7"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium">
-                  {f.q}
-                  <span className="font-mono text-muted-foreground transition-transform group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {f.a}
-                </p>
-              </details>
-            ))}
+            {FAQS.map((f, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={f.q}
+                  className="overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:bg-secondary/40"
+                >
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left text-base font-medium md:p-7"
+                  >
+                    {f.q}
+                    <span
+                      className={`shrink-0 font-mono text-muted-foreground transition-transform duration-200 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                    >
+                      +
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground md:px-7 md:pb-7">
+                      {f.a}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -146,7 +163,7 @@ function HowItWorksPage() {
           </h2>
           <p className="mt-4 max-w-md leading-relaxed text-paper/60">
             Send a message with your postcode, the type of clean and how often you'd like
-            it. Dan will come back with a free, no-obligation price the same day where he
+            it. We'll come back with a free, no-obligation price the same day where we
             can.
           </p>
           <Link
