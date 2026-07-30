@@ -8,21 +8,29 @@
  * pricing page isn't empty — update the numbers in PRICING to your real rates.
  */
 
-import logo from "@/assets/spotlessly-logo.svg.asset.json";
-import heroImg from "@/assets/sc-hero.jpg.asset.json";
-import kitchenImg from "@/assets/sc-kitchen.jpg.asset.json";
-import bathroomImg from "@/assets/sc-bathroom.jpg.asset.json";
-import tenancyImg from "@/assets/sc-tenancy.jpg.asset.json";
-import officeImg from "@/assets/sc-office.jpg.asset.json";
-import hallImg from "@/assets/sc-hall.jpg.asset.json";
-import bedroomImg from "@/assets/sc-bedroom.jpg.asset.json";
-import showerImg from "@/assets/sc-shower.jpg.asset.json";
-import loungeImg from "@/assets/sc-lounge.jpg.asset.json";
-import diningImg from "@/assets/sc-dining.jpg.asset.json";
-import bath2Img from "@/assets/sc-bath2.jpg.asset.json";
+/*
+ * Real photos of Dan's work, served from /public/images so they load on any
+ * host (Vercel, Netlify, etc.). The original Lovable build referenced images
+ * via internal "/__l5e/..." URLs that only resolve inside Lovable's own
+ * hosting, which is why every image 404'd once deployed elsewhere.
+ */
+const IMG = "/images";
 
-export const LOGO = logo.url;
-export const HERO_IMG = heroImg.url;
+export const LOGO = `${IMG}/spotlessly-logo.svg`;
+export const HERO_IMG = `${IMG}/sc-hero.jpg`;
+
+const kitchenImg = `${IMG}/sc-kitchen.jpg`;
+const bathroomImg = `${IMG}/sc-bathroom.jpg`;
+const tenancyImg = `${IMG}/sc-tenancy.jpg`;
+const officeImg = `${IMG}/sc-office.jpg`;
+const ovenImg = `${IMG}/sc-kitchen.jpg`; // oven detail — kitchen shot reads best
+const buildersImg = `${IMG}/sc-builders.jpg`;
+const hallImg = `${IMG}/sc-hall.jpg`;
+const bedroomImg = `${IMG}/sc-bedroom.jpg`;
+const showerImg = `${IMG}/sc-shower.jpg`;
+const loungeImg = `${IMG}/sc-lounge.jpg`;
+const diningImg = `${IMG}/sc-dining.jpg`;
+const bath2Img = `${IMG}/sc-bath2.jpg`;
 
 /* ------------------------------------------------------------------ */
 /* Contact                                                             */
@@ -82,7 +90,7 @@ export const SERVICES: Service[] = [
     slug: "regular",
     title: "Weekly, fortnightly & monthly cleans",
     body: "A regular slot that keeps on top of the whole house — kitchens, bathrooms, floors, dusting and surfaces.",
-    img: kitchenImg.url,
+    img: kitchenImg,
     detail:
       "The same trusted clean on a schedule that suits you. Dan keeps on top of the whole home so it never gets away from you — ideal for busy households, families and anyone who would simply rather spend their weekend on something else.",
     includes: [
@@ -98,7 +106,7 @@ export const SERVICES: Service[] = [
     slug: "deep",
     title: "Deep cleans",
     body: "Top to bottom, inside and behind. Skirtings, appliances, tiles, limescale and everything usually skipped.",
-    img: bathroomImg.url,
+    img: bathroomImg,
     detail:
       "A thorough reset for the whole property. Deep cleans reach the places a regular clean doesn't — inside appliances, behind and under where we can, tiles, grout and built-up limescale. A great starting point before going onto a regular slot.",
     includes: [
@@ -114,7 +122,7 @@ export const SERVICES: Service[] = [
     slug: "end-of-tenancy",
     title: "Moving in / end of tenancy",
     body: "Landlord-ready cleans for moving in or out, carried out to the standard inventory checks expect.",
-    img: tenancyImg.url,
+    img: tenancyImg,
     detail:
       "Moving is stressful enough. Whether you're handing keys back and want your deposit protected, or moving into a place you'd like properly freshened first, Dan cleans to the standard letting agents and inventory clerks look for.",
     includes: [
@@ -130,7 +138,7 @@ export const SERVICES: Service[] = [
     slug: "office-commercial",
     title: "Office & commercial",
     body: "Offices, shops and workspaces cleaned around your hours so your team walks into a fresh space.",
-    img: officeImg.url,
+    img: officeImg,
     detail:
       "Reliable cleaning for offices, shops, studios and other workspaces, scheduled around your opening hours. A consistent, professional finish so your team and your customers always arrive to a space that looks after itself.",
     includes: [
@@ -146,7 +154,7 @@ export const SERVICES: Service[] = [
     slug: "oven",
     title: "Oven cleaning",
     body: "A dedicated oven detail — racks, glass, trays and interior brought back to life.",
-    img: diningImg.url,
+    img: ovenImg,
     detail:
       "A focused deep clean of the one job everyone puts off. Racks, glass, trays and the interior are degreased and brought back to a like-new shine — on its own, or added to any other clean.",
     includes: [
@@ -161,7 +169,7 @@ export const SERVICES: Service[] = [
     slug: "airbnb",
     title: "Airbnb & holiday-let turnarounds",
     body: "Quick, reliable changeovers between guests, finished to a five-star standard.",
-    img: loungeImg.url,
+    img: loungeImg,
     detail:
       "Dependable changeovers for short-let hosts. Dan turns the property around between guests to a consistent, photo-ready standard, so every arrival meets the reviews you're working hard to earn.",
     includes: [
@@ -177,7 +185,7 @@ export const SERVICES: Service[] = [
     slug: "after-builders",
     title: "After-builders cleans",
     body: "Dust, debris and residue cleared after works so you can enjoy the new space.",
-    img: hallImg.url,
+    img: buildersImg,
     detail:
       "Building and renovation work leaves fine dust everywhere. Dan clears the debris and the residue left behind so you can move straight into enjoying the finished result rather than cleaning up after it.",
     includes: [
@@ -192,7 +200,7 @@ export const SERVICES: Service[] = [
     slug: "upholstery",
     title: "Upholstery cleaning",
     body: "Sofas, chairs and soft furnishings refreshed and lifted.",
-    img: bedroomImg.url,
+    img: bedroomImg,
     detail:
       "Bring tired sofas, chairs and soft furnishings back to life. A great add-on to a deep clean, or booked on its own when the furniture needs a lift more than the rest of the room.",
     includes: [
@@ -265,12 +273,12 @@ export const TRUST = [
 /* ------------------------------------------------------------------ */
 
 export const GALLERY = [
-  { src: hallImg.url, alt: "Cleaned hallway and staircase" },
-  { src: bedroomImg.url, alt: "Freshly cleaned bedroom" },
-  { src: showerImg.url, alt: "Sparkling glass shower and vanity" },
-  { src: loungeImg.url, alt: "Open plan lounge after a deep clean" },
-  { src: diningImg.url, alt: "Dining room cleaned and tidied" },
-  { src: bath2Img.url, alt: "Bathroom cleaned to a spotless finish" },
+  { src: hallImg, alt: "Cleaned hallway and staircase" },
+  { src: bedroomImg, alt: "Freshly cleaned bedroom" },
+  { src: showerImg, alt: "Sparkling glass shower and vanity" },
+  { src: loungeImg, alt: "Open plan lounge after a deep clean" },
+  { src: diningImg, alt: "Dining room cleaned and tidied" },
+  { src: bath2Img, alt: "Bathroom cleaned to a spotless finish" },
 ];
 
 /* ------------------------------------------------------------------ */
