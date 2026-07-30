@@ -1,6 +1,16 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, MessageCircle, Phone, Mail } from "lucide-react";
+import {
+  Menu,
+  X,
+  MessageCircle,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
 
 import {
   ADDRESS,
@@ -452,67 +462,101 @@ export function Areas() {
 export function Quote() {
   return (
     <section id="quote" className="mx-auto max-w-[1240px] px-6 py-20 md:py-28">
-      <div className="rounded-[2rem] bg-ink px-8 py-16 text-paper md:px-16 md:py-24">
-        <h2 className="max-w-2xl text-[clamp(2.1rem,5vw,4rem)] leading-[0.98]">
-          Get in touch for a free, no obligation quote.
-        </h2>
-        <p className="mt-5 max-w-md leading-relaxed text-paper/60">
-          Send a message with your postcode, the type of clean and how often you would
-          like it. We will come back with a price the same day where we can.
-        </p>
+      <div className="overflow-hidden rounded-[2rem] bg-ink text-paper">
+        <div className="grid gap-10 p-8 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:p-16">
+          {/* Left — pitch + primary CTA */}
+          <div className="flex flex-col">
+            <p className="eyebrow" style={{ color: "var(--accent)" }}>
+              Get in touch
+            </p>
+            <h2 className="mt-4 text-[clamp(2.1rem,5vw,3.75rem)] leading-[0.98]">
+              A free, no-obligation quote.
+            </h2>
+            <p className="mt-5 max-w-md leading-relaxed text-paper/60">
+              Send a message with your postcode, the type of clean and how often you would
+              like it. We will come back with a price the same day where we can.
+            </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            to="/contact"
-            className="rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
-          >
-            Get a quote
-          </Link>
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
-          >
-            WhatsApp us
-          </a>
-          <a
-            href={PHONE_HREF}
-            className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
-          >
-            Call us
-          </a>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-paper/60">
-          <a href={PHONE_HREF} className="transition-colors hover:text-paper">
-            {PHONE}
-          </a>
-          <a href={EMAIL_HREF} className="transition-colors hover:text-paper">
-            {EMAIL}
-          </a>
-        </div>
+            <div className="mt-8">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+              >
+                Get a quote
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href={IG}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
-          >
-            Message on Instagram
-          </a>
-          <a
-            href={FB}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-paper/10"
-          >
-            Message on Facebook
-          </a>
+            <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-10">
+              <a
+                href={IG}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-paper/70 transition-colors hover:text-paper"
+              >
+                <Instagram className="size-4" /> Instagram
+              </a>
+              <a
+                href={FB}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-paper/70 transition-colors hover:text-paper"
+              >
+                <Facebook className="size-4" /> Facebook
+              </a>
+              <span className="inline-flex items-center gap-2 text-sm text-paper/45">
+                <MapPin className="size-4" /> {ADDRESS}
+              </span>
+            </div>
+          </div>
+
+          {/* Right — direct contact tiles */}
+          <div className="flex flex-col gap-3">
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center gap-4 rounded-2xl border border-paper/15 bg-paper/[0.06] p-5 transition-colors hover:bg-paper/10"
+            >
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-paper/10">
+                <MessageCircle className="size-5" style={{ color: "var(--accent)" }} />
+              </span>
+              <span className="flex-1">
+                <span className="block text-sm font-medium text-paper">WhatsApp us</span>
+                <span className="block text-sm text-paper/55">Fastest reply</span>
+              </span>
+              <ArrowUpRight className="size-4 text-paper/40 transition-colors group-hover:text-paper" />
+            </a>
+
+            <a
+              href={PHONE_HREF}
+              className="group flex items-center gap-4 rounded-2xl border border-paper/15 bg-paper/[0.06] p-5 transition-colors hover:bg-paper/10"
+            >
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-paper/10">
+                <Phone className="size-5" style={{ color: "var(--accent)" }} />
+              </span>
+              <span className="flex-1">
+                <span className="block text-sm font-medium text-paper">Call us</span>
+                <span className="block text-sm text-paper/55">{PHONE}</span>
+              </span>
+              <ArrowUpRight className="size-4 text-paper/40 transition-colors group-hover:text-paper" />
+            </a>
+
+            <a
+              href={EMAIL_HREF}
+              className="group flex items-center gap-4 rounded-2xl border border-paper/15 bg-paper/[0.06] p-5 transition-colors hover:bg-paper/10"
+            >
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-paper/10">
+                <Mail className="size-5" style={{ color: "var(--accent)" }} />
+              </span>
+              <span className="flex-1 overflow-hidden">
+                <span className="block text-sm font-medium text-paper">Email us</span>
+                <span className="block truncate text-sm text-paper/55">{EMAIL}</span>
+              </span>
+              <ArrowUpRight className="size-4 shrink-0 text-paper/40 transition-colors group-hover:text-paper" />
+            </a>
+          </div>
         </div>
-        <p className="mt-10 font-mono text-xs uppercase tracking-[0.16em] text-paper/45">
-          {ADDRESS}
-        </p>
       </div>
     </section>
   );
