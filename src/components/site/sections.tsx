@@ -166,7 +166,11 @@ export function SiteHeader() {
 /* Hero                                                                */
 /* ------------------------------------------------------------------ */
 
-export function Hero() {
+export function Hero({ onePage = false }: { onePage?: boolean } = {}) {
+  const primaryCls =
+    "rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85";
+  const secondaryCls =
+    "rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary";
   return (
     <section id="top" className="mx-auto max-w-[1240px] px-6 pt-14 pb-6 md:pt-24">
       <p className="eyebrow">Cardiff · Domestic &amp; commercial</p>
@@ -183,18 +187,24 @@ export function Hero() {
           upholstery and office work — friendly, professional and fully insured.
         </p>
         <div className="flex flex-wrap items-center gap-3 md:justify-end">
-          <Link
-            to="/contact"
-            className="rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
-          >
-            Free, no-obligation quote
-          </Link>
-          <Link
-            to="/work"
-            className="rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
-          >
-            See our work
-          </Link>
+          {onePage ? (
+            <a href="#quote" className={primaryCls}>
+              Free, no-obligation quote
+            </a>
+          ) : (
+            <Link to="/contact" className={primaryCls}>
+              Free, no-obligation quote
+            </Link>
+          )}
+          {onePage ? (
+            <a href="#work" className={secondaryCls}>
+              See our work
+            </a>
+          ) : (
+            <Link to="/work" className={secondaryCls}>
+              See our work
+            </Link>
+          )}
         </div>
       </div>
 
@@ -227,7 +237,7 @@ export function Hero() {
 /* Services (home summary — full detail lives on /services)            */
 /* ------------------------------------------------------------------ */
 
-export function Services() {
+export function Services({ onePage = false }: { onePage?: boolean } = {}) {
   return (
     <section id="services" className="mx-auto max-w-[1240px] px-6 py-20 md:py-28">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -281,12 +291,21 @@ export function Services() {
             </li>
           ))}
         </ul>
-        <Link
-          to="/services"
-          className="shrink-0 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
-        >
-          View all services &amp; pricing
-        </Link>
+        {onePage ? (
+          <a
+            href="#quote"
+            className="shrink-0 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+          >
+            Get a free quote
+          </a>
+        ) : (
+          <Link
+            to="/services"
+            className="shrink-0 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+          >
+            View all services &amp; pricing
+          </Link>
+        )}
       </div>
     </section>
   );
@@ -459,7 +478,7 @@ export function Areas() {
 /* Quote CTA                                                           */
 /* ------------------------------------------------------------------ */
 
-export function Quote() {
+export function Quote({ onePage = false }: { onePage?: boolean } = {}) {
   return (
     <section id="quote" className="mx-auto max-w-[1240px] px-6 py-20 md:py-28">
       <div className="overflow-hidden rounded-[2rem] bg-ink text-paper">
@@ -478,13 +497,25 @@ export function Quote() {
             </p>
 
             <div className="mt-8">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
-              >
-                Get a quote
-                <ArrowUpRight className="size-4" />
-              </Link>
+              {onePage ? (
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+                >
+                  Get a quote
+                  <ArrowUpRight className="size-4" />
+                </a>
+              ) : (
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+                >
+                  Get a quote
+                  <ArrowUpRight className="size-4" />
+                </Link>
+              )}
             </div>
 
             <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-10">
