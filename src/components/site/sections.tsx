@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle, Phone, Mail } from "lucide-react";
 
 import {
   ADDRESS,
@@ -80,6 +80,34 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-1.5 sm:flex">
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Message us on WhatsApp"
+              title="WhatsApp"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary"
+            >
+              <MessageCircle className="size-[18px]" style={{ color: "var(--accent)" }} />
+            </a>
+            <a
+              href={PHONE_HREF}
+              aria-label={`Call us on ${PHONE}`}
+              title="Call us"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary"
+            >
+              <Phone className="size-[18px]" style={{ color: "var(--accent)" }} />
+            </a>
+            <a
+              href={EMAIL_HREF}
+              aria-label={`Email us at ${EMAIL}`}
+              title="Email us"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary"
+            >
+              <Mail className="size-[18px]" style={{ color: "var(--accent)" }} />
+            </a>
+          </div>
           <Link
             to="/contact"
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85 sm:inline-block"
