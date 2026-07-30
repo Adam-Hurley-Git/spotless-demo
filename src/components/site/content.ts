@@ -61,9 +61,9 @@ export type NavItem = {
 
 export const NAV: NavItem[] = [
   { label: "Services & pricing", to: "/services" },
-  { label: "Our work", to: "/", hash: "work" },
-  { label: "How it works", to: "/", hash: "process" },
-  { label: "Reviews", to: "/", hash: "reviews" },
+  { label: "Our work", to: "/work" },
+  { label: "How it works", to: "/how-it-works" },
+  { label: "Reviews", to: "/reviews" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -307,6 +307,78 @@ export const REVIEWS = [
     quote:
       "We asked Dan for a deep clean of our house! The most thorough clean we have ever had — we are now looking forward to regular cleans!",
     name: "Sravya Gabriella",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Process — the four steps from message to spotless                   */
+/* ------------------------------------------------------------------ */
+
+export type Step = {
+  title: string;
+  /** short line used on the home page strip */
+  body: string;
+  /** fuller paragraph used on the How it works page */
+  detail: string;
+};
+
+export const STEPS: Step[] = [
+  {
+    title: "Message us",
+    body: "Send a DM on Instagram or Facebook with your postcode and what you need.",
+    detail:
+      "Send Dan a message on WhatsApp, Instagram or Facebook, or use the quote form. Tell him your postcode, roughly how big the space is and what you're after — a regular slot, a one-off deep clean, an end of tenancy, and so on. The more detail you give, the more accurate your quote.",
+  },
+  {
+    title: "Get a quote",
+    body: "Free, no-obligation price and a time that suits you.",
+    detail:
+      "You'll get a clear, no-obligation price — usually the same day — along with a couple of times that could work. Nothing is fixed into a package: the quote is based on the size and condition of your space and how often you'd like it cleaned. No hidden extras, no upselling.",
+  },
+  {
+    title: "We clean",
+    body: "Dan turns up on time with everything needed and works through the checklist.",
+    detail:
+      "Dan arrives on time with all the products and equipment needed and works through the checklist for your type of clean. He's fully insured, careful in your home and happy to focus on anything specific you've flagged. Same trusted cleaner every visit — never a rotating team of strangers.",
+  },
+  {
+    title: "Enjoy it",
+    body: "Come back to a spotless space. Book it again whenever you like.",
+    detail:
+      "Come back to a spotless space. If you'd like a regular slot, Dan will hold the same day and time for you each week, fortnight or month. Happy to adjust the checklist any time, and easy to reach if you ever need to move a booking.",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* FAQ — used on the How it works page (good for SEO)                  */
+/* ------------------------------------------------------------------ */
+
+export type Faq = { q: string; a: string };
+
+export const FAQS: Faq[] = [
+  {
+    q: "How do I book a clean?",
+    a: "Message Dan on WhatsApp, Instagram or Facebook, or send the quote form. He'll confirm a price and a time that suits you — most enquiries get a same-day reply.",
+  },
+  {
+    q: "Are you insured?",
+    a: "Yes. Spotlessly Clean is fully insured and Dan is carefully vetted and experienced, so you can have complete peace of mind having him in your home or business.",
+  },
+  {
+    q: "Do I need to provide cleaning products or equipment?",
+    a: "No — Dan brings everything needed as standard. If you'd prefer he uses specific products of your own, for example for allergies or particular surfaces, just let him know and he's happy to.",
+  },
+  {
+    q: "Are you happy to clean around pets?",
+    a: "Absolutely. Dan is comfortable working in homes with pets. Just mention them when you book so he knows what to expect on the day.",
+  },
+  {
+    q: "What if I need to cancel or reschedule?",
+    a: "Life happens — just give Dan as much notice as you can and he'll move your booking to another time. There's no tie-in and no pressure with regular slots.",
+  },
+  {
+    q: "Which areas do you cover?",
+    a: "Cardiff and the surrounding areas, including Cyncoed, Llanishen, Roath, Whitchurch, Penarth, Radyr, Rhiwbina, Llandaff and more. Not sure if you're in range? Ask anyway.",
   },
 ];
 

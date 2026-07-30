@@ -18,6 +18,7 @@ import {
   PHONE,
   PHONE_HREF,
   REVIEWS,
+  STEPS,
   TRUST,
   WHATSAPP,
   type NavItem,
@@ -151,8 +152,7 @@ export function Hero() {
             Free, no-obligation quote
           </Link>
           <Link
-            to="/"
-            hash="work"
+            to="/work"
             className="rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
           >
             See our work
@@ -300,13 +300,6 @@ export function Work() {
 /* Process                                                             */
 /* ------------------------------------------------------------------ */
 
-const STEPS = [
-  ["Message us", "Send a DM on Instagram or Facebook with your postcode and what you need."],
-  ["Get a quote", "Free, no-obligation price and a time that suits you."],
-  ["We clean", "Dan turns up on time with everything needed and works through the checklist."],
-  ["Enjoy it", "Come back to a spotless space. Book it again whenever you like."],
-];
-
 export function Process() {
   return (
     <section id="process" className="bg-ink py-20 text-paper md:py-28">
@@ -318,13 +311,13 @@ export function Process() {
           Four steps from message to spotless.
         </h2>
         <ol className="mt-14 grid gap-4 md:grid-cols-4">
-          {STEPS.map(([t, b], i) => (
-            <li key={t} className="rounded-2xl border border-paper/10 bg-paper/5 p-7">
+          {STEPS.map((s, i) => (
+            <li key={s.title} className="rounded-2xl border border-paper/10 bg-paper/5 p-7">
               <span className="font-mono text-xs" style={{ color: "var(--accent)" }}>
                 0{i + 1}
               </span>
-              <h3 className="mt-5 text-lg">{t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-paper/60">{b}</p>
+              <h3 className="mt-5 text-lg">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-paper/60">{s.body}</p>
             </li>
           ))}
         </ol>

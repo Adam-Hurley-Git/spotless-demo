@@ -52,8 +52,7 @@ function ServicesPage() {
               Get a free quote
             </Link>
             <Link
-              to="/"
-              hash="work"
+              to="/work"
               className="rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
             >
               See our work
