@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FullSiteRouteImport } from './routes/full-site'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as OnePageRouteImport } from './routes/one-page'
 import { Route as ProposalRouteImport } from './routes/proposal'
@@ -26,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FullSiteRoute = FullSiteRouteImport.update({
+  id: '/full-site',
+  path: '/full-site',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -62,6 +68,7 @@ const WorkRoute = WorkRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/full-site': typeof FullSiteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/one-page': typeof OnePageRoute
   '/proposal': typeof ProposalRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/full-site': typeof FullSiteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/one-page': typeof OnePageRoute
   '/proposal': typeof ProposalRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/full-site': typeof FullSiteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/one-page': typeof OnePageRoute
   '/proposal': typeof ProposalRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/full-site'
     | '/how-it-works'
     | '/one-page'
     | '/proposal'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/full-site'
     | '/how-it-works'
     | '/one-page'
     | '/proposal'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/full-site'
     | '/how-it-works'
     | '/one-page'
     | '/proposal'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  FullSiteRoute: typeof FullSiteRoute
   HowItWorksRoute: typeof HowItWorksRoute
   OnePageRoute: typeof OnePageRoute
   ProposalRoute: typeof ProposalRoute
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/full-site': {
+      id: '/full-site'
+      path: '/full-site'
+      fullPath: '/full-site'
+      preLoaderRoute: typeof FullSiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  FullSiteRoute: FullSiteRoute,
   HowItWorksRoute: HowItWorksRoute,
   OnePageRoute: OnePageRoute,
   ProposalRoute: ProposalRoute,

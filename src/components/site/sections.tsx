@@ -75,7 +75,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-6 px-6 py-4">
-        <Link to="/" className="shrink-0" onClick={() => setOpen(false)}>
+        <Link to="/full-site" className="shrink-0" onClick={() => setOpen(false)}>
           <img src={LOGO} alt="Spotlessly Clean Ltd" className="h-14 w-auto md:h-16" />
         </Link>
 
@@ -601,7 +601,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between">
-        <Link to="/">
+        <Link to="/full-site">
           <img src={LOGO} alt="Spotlessly Clean Ltd" className="h-16 w-auto" />
         </Link>
         <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
