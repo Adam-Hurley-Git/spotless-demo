@@ -32,6 +32,7 @@ const showerImg = `${IMG}/sc-shower.jpg`;
 const loungeImg = `${IMG}/sc-lounge.jpg`;
 const diningImg = `${IMG}/sc-dining.jpg`;
 const bath2Img = `${IMG}/sc-bath2.jpg`;
+const upholsteryImg = `${IMG}/sc-upholstery.jpg`; // real photo of Dan vacuuming a sofa
 
 /* ------------------------------------------------------------------ */
 /* Contact                                                             */
@@ -201,7 +202,7 @@ export const SERVICES: Service[] = [
     slug: "upholstery",
     title: "Upholstery cleaning",
     body: "Sofas, chairs and soft furnishings refreshed and lifted.",
-    img: bedroomImg,
+    img: upholsteryImg,
     detail:
       "Bring tired sofas, chairs and soft furnishings back to life. A great add-on to a deep clean, or booked on its own when the furniture needs a lift more than the rest of the room.",
     includes: [
