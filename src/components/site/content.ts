@@ -74,6 +74,7 @@ export type NavItem = {
 };
 
 export const NAV: NavItem[] = [
+  { label: "Home", to: "/" },
   { label: "Services & pricing", to: "/services" },
   { label: "Our work", to: "/work" },
   { label: "How it works", to: "/how-it-works" },
