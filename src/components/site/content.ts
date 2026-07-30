@@ -21,9 +21,10 @@ export const HERO_IMG = `${IMG}/sc-hero.jpg`;
 
 const kitchenImg = `${IMG}/sc-kitchen.jpg`;
 const bathroomImg = `${IMG}/sc-bathroom.jpg`;
+const deepImg = `${IMG}/sc-deep.jpg`; // grimy "before" shot for deep cleans
 const tenancyImg = `${IMG}/sc-tenancy.jpg`;
 const officeImg = `${IMG}/sc-office.jpg`;
-const ovenImg = `${IMG}/sc-kitchen.jpg`; // oven detail — kitchen shot reads best
+const ovenImg = `${IMG}/sc-oven.jpg`; // real dirty-oven interior
 const buildersImg = `${IMG}/sc-builders.jpg`;
 const hallImg = `${IMG}/sc-hall.jpg`;
 const bedroomImg = `${IMG}/sc-bedroom.jpg`;
@@ -106,7 +107,7 @@ export const SERVICES: Service[] = [
     slug: "deep",
     title: "Deep cleans",
     body: "Top to bottom, inside and behind. Skirtings, appliances, tiles, limescale and everything usually skipped.",
-    img: bathroomImg,
+    img: deepImg,
     detail:
       "A thorough reset for the whole property. Deep cleans reach the places a regular clean doesn't — inside appliances, behind and under where we can, tiles, grout and built-up limescale. A great starting point before going onto a regular slot.",
     includes: [
