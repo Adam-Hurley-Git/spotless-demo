@@ -7,7 +7,7 @@ import { LOGO } from "@/components/site/content";
  * Landing page = the client proposal / comparison page.
  *
  * Presents the two website options side by side — a £450 single-page site and
- * the £799 full six-page site — each linking out to a live demo (opened in a new
+ * the £699 full six-page site — each linking out to a live demo (opened in a new
  * tab). It intentionally sells both while making the value of the full site clear.
  *
  * The full site itself lives at /full-site; the £450 demo at /one-page.
@@ -73,7 +73,7 @@ const COMPARISON: Row[] = [
   { label: "Contact form", one: false, full: true },
   { label: "SEO", one: "Single page", full: "Every page" },
   { label: "Easy to expand later", one: "Limited", full: true },
-  { label: "Price", one: "£450", full: "£799" },
+  { label: "Price", one: "£450", full: "£699" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -179,14 +179,14 @@ function ProposalPage() {
               </a>
             </article>
 
-            {/* Full website — £799 */}
+            {/* Full website — £699 */}
             <article className="flex flex-col rounded-[2rem] border border-border bg-card p-8 md:p-10">
               <div className="flex items-center justify-between gap-4">
                 <p className="eyebrow">Full website</p>
               </div>
               <div className="mt-5 flex items-baseline gap-2">
                 <span className="text-[clamp(2.5rem,6vw,3.5rem)] leading-none tracking-tight">
-                  £799
+                  £699
                 </span>
                 <span className="text-sm text-muted-foreground">one-off</span>
               </div>
@@ -246,7 +246,7 @@ function ProposalPage() {
                     <th className="px-4 py-4 text-center font-medium">
                       Full site
                       <span className="block font-mono text-xs font-normal text-muted-foreground">
-                        £799
+                        £699
                       </span>
                     </th>
                   </tr>
@@ -297,7 +297,7 @@ function ProposalPage() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
               >
-                Full site — £799
+                Full site — £699
                 <ArrowUpRight className="size-4" />
               </a>
             </div>
