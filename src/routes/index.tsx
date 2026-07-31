@@ -52,8 +52,8 @@ const FULL_SITE_INCLUDES = [
   "'How it works' page with a full FAQ",
   "Dedicated reviews page",
   "Contact page with a quote request form",
-  "Individual SEO on every page — more chances to be found on Google",
-  "Room to grow: easy to add pages later",
+  "Separate SEO on each page (titles and descriptions)",
+  "Easy to add more pages later",
 ];
 
 type Row = {
@@ -80,7 +80,7 @@ const COMPARISON: Row[] = [
 /* Cell renderer for the comparison table                              */
 /* ------------------------------------------------------------------ */
 
-function Cell({ value, dark = false }: { value: string | boolean; dark?: boolean }) {
+function Cell({ value }: { value: string | boolean }) {
   if (value === true) {
     return (
       <Check
@@ -93,12 +93,12 @@ function Cell({ value, dark = false }: { value: string | boolean; dark?: boolean
   if (value === false) {
     return (
       <Minus
-        className={`mx-auto size-4 ${dark ? "text-paper/35" : "text-muted-foreground/40"}`}
+        className="mx-auto size-4 text-muted-foreground/40"
         aria-label="Not included"
       />
     );
   }
-  return <span className={dark ? "text-paper" : "text-foreground"}>{value}</span>;
+  return <span className="text-foreground">{value}</span>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -128,9 +128,10 @@ function ProposalPage() {
             <span className="text-muted-foreground">your new website.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Below are two options, both built and ready to view live. Take a look at each,
-            then let me know which one you'd like to go with — there's no wrong choice, it
-            just depends on how much you want the site to do for you.
+            Two options, both built and live so you can see exactly what you'd be getting.
+            They differ in scope — how many pages the site has and how much it's set up to
+            do. Have a look through each, and the breakdown below, and let me know which
+            fits.
           </p>
         </section>
 
@@ -140,7 +141,7 @@ function ProposalPage() {
             {/* One-page — £450 */}
             <article className="flex flex-col rounded-[2rem] border border-border bg-card p-8 md:p-10">
               <div className="flex items-center justify-between gap-4">
-                <p className="eyebrow">Option A — One-page site</p>
+                <p className="eyebrow">One-page site</p>
               </div>
               <div className="mt-5 flex items-baseline gap-2">
                 <span className="text-[clamp(2.5rem,6vw,3.5rem)] leading-none tracking-tight">
@@ -178,25 +179,21 @@ function ProposalPage() {
               </a>
             </article>
 
-            {/* Full site — £799 (recommended) */}
-            <article className="relative flex flex-col overflow-hidden rounded-[2rem] bg-ink p-8 text-paper md:p-10">
+            {/* Full website — £799 */}
+            <article className="flex flex-col rounded-[2rem] border border-border bg-card p-8 md:p-10">
               <div className="flex items-center justify-between gap-4">
-                <p className="eyebrow" style={{ color: "var(--accent)" }}>
-                  Option B — Full website
-                </p>
-                <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
-                  Recommended
-                </span>
+                <p className="eyebrow">Full website</p>
               </div>
               <div className="mt-5 flex items-baseline gap-2">
                 <span className="text-[clamp(2.5rem,6vw,3.5rem)] leading-none tracking-tight">
                   £799
                 </span>
-                <span className="text-sm text-paper/55">one-off</span>
+                <span className="text-sm text-muted-foreground">one-off</span>
               </div>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-paper/65">
-                A complete six-page website built to win work and get found on Google — a
-                dedicated page for every part of the business, with more room to grow.
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+                A six-page site with a dedicated page for each part of the business —
+                services, work, how it works, reviews and contact — with room to add more
+                later.
               </p>
 
               <ul className="mt-7 grid gap-2.5">
@@ -206,7 +203,7 @@ function ProposalPage() {
                       className="mt-0.5 size-4 shrink-0"
                       style={{ color: "var(--accent)" }}
                     />
-                    <span className="text-paper/90">{inc}</span>
+                    <span className="text-foreground/90">{inc}</span>
                   </li>
                 ))}
               </ul>
@@ -216,7 +213,7 @@ function ProposalPage() {
                 href="/full-site"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
               >
                 View the full site
                 <ArrowUpRight className="size-4" />
@@ -246,38 +243,28 @@ function ProposalPage() {
                         £450
                       </span>
                     </th>
-                    <th className="rounded-t-2xl bg-ink px-4 py-4 text-center font-medium text-paper">
+                    <th className="px-4 py-4 text-center font-medium">
                       Full site
-                      <span
-                        className="block font-mono text-xs font-normal"
-                        style={{ color: "var(--accent)" }}
-                      >
+                      <span className="block font-mono text-xs font-normal text-muted-foreground">
                         £799
                       </span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row, i) => {
-                    const last = i === COMPARISON.length - 1;
-                    return (
-                      <tr key={row.label} className="border-b border-border">
-                        <td className="py-3.5 pr-4 text-left text-foreground/90">
-                          {row.label}
-                        </td>
-                        <td className="px-4 py-3.5 text-center text-muted-foreground">
-                          <Cell value={row.one} />
-                        </td>
-                        <td
-                          className={`bg-ink px-4 py-3.5 text-center text-paper/90 ${
-                            last ? "rounded-b-2xl" : ""
-                          }`}
-                        >
-                          <Cell value={row.full} dark />
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {COMPARISON.map((row) => (
+                    <tr key={row.label} className="border-b border-border">
+                      <td className="py-3.5 pr-4 text-left text-foreground/90">
+                        {row.label}
+                      </td>
+                      <td className="px-4 py-3.5 text-center text-muted-foreground">
+                        <Cell value={row.one} />
+                      </td>
+                      <td className="px-4 py-3.5 text-center text-muted-foreground">
+                        <Cell value={row.full} />
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -308,7 +295,7 @@ function ProposalPage() {
                 href="/full-site"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-medium transition-colors hover:bg-secondary"
               >
                 Full site — £799
                 <ArrowUpRight className="size-4" />
