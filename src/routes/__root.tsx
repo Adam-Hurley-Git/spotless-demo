@@ -1,5 +1,7 @@
-import { QueryClient } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
+  Outlet,
+  Link,
   createRootRouteWithContext,
   useRouter,
   HeadContent,
@@ -10,26 +12,23 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-// The site is currently paused. This holding page is rendered for every route
-// (see RootComponent and notFoundComponent below) so no page of the app is
-// reachable. To bring the site back, revert the commit that introduced this.
-function PausedPage() {
+function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-2xl font-semibold text-foreground sm:text-3xl">
-          This site is no longer available
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          Thanks for visiting. If you need to get in touch, you can reach us by email at{" "}
-          <a
-            href="mailto:hurleyadam10@gmail.com"
-            className="text-foreground underline underline-offset-4"
-          >
-            hurleyadam10@gmail.com
-          </a>
-          .
+        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist or has been moved.
         </p>
+        <div className="mt-6">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Go home
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -127,7 +126,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
   shellComponent: RootShell,
   component: RootComponent,
-  notFoundComponent: PausedPage,
+  notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
@@ -146,7 +145,12 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  // Site is paused: render the holding page for every route instead of the
-  // normal <Outlet /> so none of the app's pages are reachable.
-  return <PausedPage />;
+  const { queryClient } = Route.useRouteContext();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
+    </QueryClientProvider>
+  );
 }
